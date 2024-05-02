@@ -3,6 +3,5 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "python.defaultInterpreterPath": "${workspaceFolder}/backend/env/Scripts/python.exe"
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
