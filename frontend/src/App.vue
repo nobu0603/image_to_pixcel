@@ -1,6 +1,11 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+const leftDrawerOpen = ref(false)
+</script>
+
 <template>
   <q-layout view="lHh Lpr lFf" class="bg-white">
-    <q-header elevated>
+    <q-header elevated class="bg-grey-2 text-primary">
       <q-toolbar>
         <q-btn
           flat
@@ -80,23 +85,3 @@
     </q-page-container>
   </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-const leftDrawerOpen = ref(false)
-
-// const toggleLeftDrawer = () => ({
-//   leftDrawerOpen.value = !leftDrawerOpen.value
-// })
-// export default {
-//   name: 'MyLayout',
-
-//   setup () {
-
-//     return {
-//       leftDrawerOpen,
-//       toggleLeftDrawer
-//     }
-//   }
-// }
-</script>
