@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="convert-image">
     <h1>
-      This is an about page
+      This is a convert image page
       <q-badge outline align="middle" color="teal"> v2.0.0 </q-badge>
     </h1>
   </div>
