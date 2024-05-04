@@ -17,7 +17,7 @@ const clearItem = () => {
 
 <template>
   <div class="convert-image">
-    <h2>This is a convert image page</h2>
+    <!-- <h2>This is a convert image page</h2> -->
     <q-file
       filled
       bottom-slots
@@ -41,10 +41,23 @@ const clearItem = () => {
 
       <template v-slot:hint> Field hint </template>
     </q-file>
-    <q-btn color="primary" icon-right="image" label="Show Image" @click="showItem" />
-    <div class="w-30">
-      <img v-if="imageUrl" :src="imageUrl" alt="" class="w-100" />
+    <q-btn
+      v-if="model != null"
+      color="primary"
+      icon-right="image"
+      label="Show Image"
+      @click="showItem"
+    />
+    <div v-if="imageUrl" class="w-30 img-wrap border-around">
+      <img :src="imageUrl" alt="" class="w-100" />
     </div>
+    <q-btn
+      v-if="imageUrl"
+      color="primary"
+      icon-right="sync"
+      label="Convert to Pixcel"
+      @click="showItem"
+    />
   </div>
 </template>
 
@@ -64,6 +77,15 @@ const clearItem = () => {
 .w-30 {
   min-width: 300px;
   width: 30%;
+}
+.img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+}
+.border-around {
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 /* } */
 </style>
