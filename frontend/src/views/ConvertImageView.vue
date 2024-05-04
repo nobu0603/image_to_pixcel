@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 const model = ref(null)
 const imageUrl = ref('')
-const OnImage: boolean = false
 
 const showItem = () => {
   const file = model.value
