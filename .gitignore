@@ -6,4 +6,5 @@ __pycache__
 .venv
 
 # 一時保存用の画像ファイル
+temp_image.png
 pixel_art_image.png
