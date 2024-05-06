@@ -85,7 +85,6 @@ const captureAndDownload = async () => {
 
 <template>
   <div class="convert-image">
-    <!-- <h2>This is a convert image page</h2> -->
     <q-file
       filled
       bottom-slots
@@ -119,6 +118,7 @@ const captureAndDownload = async () => {
     <div v-if="imageUrl" class="img-wrap border-around">
       <div class="img-outer" ref="imageDiv" :style="imageStyle"></div>
     </div>
+    <div v-if="imageUrl" class="text-h6">Pixel Size</div>
     <q-slider
       v-if="imageUrl"
       v-model="pixelSize"
