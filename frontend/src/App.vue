@@ -22,7 +22,6 @@ const leftDrawerOpen = ref(false)
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="bg-grey-2">
       <q-list>
-        <!-- <q-item-label header>Navigation</q-item-label> -->
         <q-item clickable rel="noopener" to="/">
           <q-item-section avatar>
             <q-icon name="change_circle" />
@@ -31,14 +30,6 @@ const leftDrawerOpen = ref(false)
             <q-item-label>Convert Image</q-item-label>
           </q-item-section>
         </q-item>
-        <!-- <q-item clickable rel="noopener" to="/how_to_use">
-          <q-item-section avatar>
-            <q-icon name="question_mark" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>How to use</q-item-label>
-          </q-item-section>
-        </q-item> -->
         <q-item
           clickable
           target="_blank"
