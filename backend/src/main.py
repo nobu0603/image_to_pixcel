@@ -20,12 +20,12 @@ app.add_middleware(
 async def create_upload_file(file: UploadFile = File(...), pixelSize: int = Form(10)):
     # 画像を一時的に保存
     contents = await file.read()
-    with open("temp_image.png", "wb") as f:
+    with open("assets/temp_image.png", "wb") as f:
         f.write(contents)
 
     # 画像をドット絵に変換して保存
-    pixel_art_stream = convert_to_pixel_art("temp_image.png", pixelSize)
-    with open("pixel_art_image.png", "wb") as f:
+    pixel_art_stream = convert_to_pixel_art("assets/temp_image.png", pixelSize)
+    with open("assets/pixel_art_image.png", "wb") as f:
         f.write(pixel_art_stream.getbuffer())
 
     return {"message": "File uploaded and processed"}
@@ -34,7 +34,7 @@ async def create_upload_file(file: UploadFile = File(...), pixelSize: int = Form
 @app.get("/image/")
 async def get_image():
     # 変換された画像を返す
-    return FileResponse("pixel_art_image.png", media_type="image/png")
+    return FileResponse("assets/pixel_art_image.png", media_type="image/png")
 
 def convert_to_pixel_art(image_path: str, pixelSize: int):
     with Image.open(image_path) as img:
