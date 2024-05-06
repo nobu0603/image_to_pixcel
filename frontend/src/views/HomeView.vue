@@ -26,7 +26,9 @@ const showItem = () => {
 // 画像要素をキャンバス要素にしてAPIをコールし、返された画像を取得する
 const uploadImage = async () => {
   if (!imageDiv.value) return
-  const canvas = await html2canvas(imageDiv.value)
+  const canvas = await html2canvas(imageDiv.value, {
+    backgroundColor: null
+  })
   canvas.toBlob(async (blob) => {
     if (!blob) return
     const formData = new FormData()

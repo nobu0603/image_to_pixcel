@@ -29,12 +29,8 @@ def convert_to_pixel_art(image_path: str, pixel_size: int):
         # 元のサイズを記録
         original_size = img.size
 
-        # トリミングするサイズ（上下左右5ピクセル）
-        crop_box = (5, 5, original_size[0] - 5, original_size[1] - 5)
-        cropped_img = img.crop(crop_box)
-
         # ピクセルサイズに合わせてサイズを小さくする
-        small_img = cropped_img.resize(
+        small_img = img.resize(
             (original_size[0] // pixel_size, original_size[1] // pixel_size),
             Image.Resampling.NEAREST  # Pillow 7.0.0以降はこちらを使用
         )
