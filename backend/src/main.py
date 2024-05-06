@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -15,9 +16,14 @@ app.add_middleware(
     allow_headers=["*"],  # すべてのヘッダを許可
 )
 
+# assetsディレクトリのパスを設定
+assets_directory = 'assets'
+
 # 画像を一時的に保存し、ピクセルサイズを受け取って処理する
 @app.post("/upload/")
 async def create_upload_file(file: UploadFile = File(...), pixelSize: int = Form(10)):
+    # アプリ起動時にassetsディレクトリが存在するか確認し、なければ作成
+    os.makedirs(assets_directory, exist_ok=True)
     # 画像を一時的に保存
     contents = await file.read()
     with open("assets/temp_image.png", "wb") as f:
