@@ -60,7 +60,9 @@ const clearItem = () => {
 const captureAndDownload = async () => {
   if (!imgOuter.value) return
 
-  const canvas = await html2canvas(imgOuter.value)
+  const canvas = await html2canvas(imgOuter.value, {
+    backgroundColor: null
+  })
   const image = canvas.toDataURL('image/png')
 
   // ダウンロード用のaタグを生成
