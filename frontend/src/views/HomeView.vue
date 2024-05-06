@@ -62,6 +62,7 @@ const loadImage = async () => {
 // インプット内のクリアボタンクリック時に画像パスを削除する
 const clearItem = () => {
   imageUrl.value = ''
+  uploadImageUrl.value = ''
 }
 
 // ダウンロードボタン
