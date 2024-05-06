@@ -43,14 +43,14 @@ const leftDrawerOpen = ref(false)
           clickable
           target="_blank"
           rel="noopener"
-          href="https://github.com/nobu0603/image_to_pixcel"
+          href="https://github.com/nobu0603/image_to_pixel"
         >
           <q-item-section avatar>
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
             <q-item-label>GitHub</q-item-label>
-            <q-item-label caption>github.com/nobu0603/image_to_pixcel</q-item-label>
+            <q-item-label caption>github.com/nobu0603/image_to_pixel</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
