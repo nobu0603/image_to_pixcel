@@ -90,7 +90,7 @@ const captureAndDownload = async () => {
       bottom-slots
       accept=".jpg, .jpeg, .JPEG, .png"
       v-model="model"
-      label="Label"
+      label="Image file select"
       counter
       class="object-size"
     >
@@ -131,7 +131,7 @@ const captureAndDownload = async () => {
       v-if="imageUrl"
       color="primary"
       icon-right="sync"
-      label="Convert to Pixcel"
+      label="Convert to Pixel"
       @click="uploadImage"
     />
     <div v-if="uploadImageUrl" class="img-wrap border-around">
@@ -148,7 +148,6 @@ const captureAndDownload = async () => {
 </template>
 
 <style>
-/* @media (min-width: 1024px) { */
 .convert-image {
   min-height: 100vh;
   display: flex;
@@ -182,8 +181,4 @@ const captureAndDownload = async () => {
   height: 100%;
   overflow: hidden;
 }
-/* .img-wrap img {
-  object-fit: contain !important;
-} */
-/* } */
 </style>
