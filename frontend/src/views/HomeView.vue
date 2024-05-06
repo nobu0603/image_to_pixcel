@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import axios from 'axios'
 import html2canvas from 'html2canvas'
 
 const model = ref(null)
@@ -40,22 +41,32 @@ const uploadImage = async () => {
     formData.append('file', blob, 'image.png')
     formData.append('pixelSize', currentPixelSize.toString())
 
-    await fetch('http://localhost:8000/upload/', {
-      method: 'POST',
-      body: formData
-    })
-    await loadImage()
+    try {
+      await axios.post('http://localhost:8000/upload/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      await loadImage()
+    } catch (error) {
+      console.error('Error uploading image:', error)
+    }
   })
 }
 
 const loadImage = async () => {
-  const response = await fetch('http://localhost:8000/image/')
-  const blob = await response.blob()
-  uploadImageUrl.value = URL.createObjectURL(blob)
-  uploadImageStyle = {
-    backgroundImage: `url('${uploadImageUrl.value}')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center'
+  try {
+    const response = await axios.get('http://localhost:8000/image/', {
+      responseType: 'blob'
+    })
+    uploadImageUrl.value = URL.createObjectURL(response.data)
+    uploadImageStyle = {
+      backgroundImage: `url('${uploadImageUrl.value}')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center'
+    }
+  } catch (error) {
+    console.error('Error fetching image:', error)
   }
 }
 
