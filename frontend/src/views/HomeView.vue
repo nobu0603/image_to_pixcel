@@ -91,7 +91,7 @@ const captureAndDownload = async () => {
       bottom-slots
       accept=".jpg, .JPG, .jpeg, .JPEG, .png, .PNG"
       v-model="model"
-      label="Image file(jpg or png) select"
+      label="Image file(jpg or png) upload"
       class="object-size"
     >
       <template v-slot:prepend>
