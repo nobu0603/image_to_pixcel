@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import html2canvas from 'html2canvas'
 
 const model = ref(null)
+const pixelSize = ref(1)
 const imageUrl = ref('')
 let imageStyle = {}
 let uploadImageStyle = {}
@@ -23,6 +24,9 @@ const showItem = () => {
   }
 }
 
+// ピクセルサイズのラベルを生成
+const fnMarkerLabel = (val: number) => `${10 * val}px`
+
 // 画像要素をキャンバス要素にしてAPIをコールし、返された画像を取得する
 const uploadImage = async () => {
   if (!imageDiv.value) return
@@ -31,8 +35,10 @@ const uploadImage = async () => {
   })
   canvas.toBlob(async (blob) => {
     if (!blob) return
+    const currentPixelSize = pixelSize.value * 10
     const formData = new FormData()
     formData.append('file', blob, 'image.png')
+    formData.append('pixelSize', currentPixelSize.toString())
 
     await fetch('http://localhost:8000/upload/', {
       method: 'POST',
@@ -113,6 +119,14 @@ const captureAndDownload = async () => {
     <div v-if="imageUrl" class="img-wrap border-around">
       <div class="img-outer" ref="imageDiv" :style="imageStyle"></div>
     </div>
+    <q-slider
+      v-if="imageUrl"
+      v-model="pixelSize"
+      :min="1"
+      :max="5"
+      :marker-labels="fnMarkerLabel"
+      class="object-size"
+    />
     <q-btn
       v-if="imageUrl"
       color="primary"
