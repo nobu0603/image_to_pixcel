@@ -89,10 +89,9 @@ const captureAndDownload = async () => {
     <q-file
       filled
       bottom-slots
-      accept=".jpg, .jpeg, .JPEG, .png"
+      accept=".jpg, .JPG, .jpeg, .JPEG, .png, .PNG"
       v-model="model"
-      label="Image file select"
-      counter
+      label="Image file(jpg or png) select"
       class="object-size"
     >
       <template v-slot:prepend>
@@ -106,8 +105,6 @@ const captureAndDownload = async () => {
           class="cursor-pointer"
         />
       </template>
-
-      <template v-slot:hint> Field hint </template>
     </q-file>
     <q-btn
       v-if="model != null"
