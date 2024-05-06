@@ -87,7 +87,7 @@ const captureAndDownload = async () => {
       v-model="model"
       label="Label"
       counter
-      class="w-30"
+      class="object-size"
     >
       <template v-slot:prepend>
         <q-icon name="cloud_upload" @click.stop.prevent />
@@ -111,9 +111,7 @@ const captureAndDownload = async () => {
       @click="showItem"
     />
     <div v-if="imageUrl" class="img-wrap border-around">
-      <div class="img-outer" ref="imageDiv" :style="imageStyle">
-        <!-- <q-img ratio="1" :src="imageUrl" alt="" class="w-100" /> -->
-      </div>
+      <div class="img-outer" ref="imageDiv" :style="imageStyle"></div>
     </div>
     <q-btn
       v-if="imageUrl"
@@ -123,9 +121,7 @@ const captureAndDownload = async () => {
       @click="uploadImage"
     />
     <div v-if="uploadImageUrl" class="img-wrap border-around">
-      <div ref="imgOuter" class="img-outer" :style="uploadImageStyle">
-        <!-- <q-img ratio="1" :src="uploadImageUrl" alt="" class="w-100" /> -->
-      </div>
+      <div ref="imgOuter" class="img-outer" :style="uploadImageStyle"></div>
     </div>
     <q-btn
       v-if="uploadImageUrl"
@@ -146,15 +142,18 @@ const captureAndDownload = async () => {
   align-items: center;
   justify-content: center;
   gap: 24px;
+  padding: 100px 0;
 }
 .w-100 {
   width: 100%;
 }
-.w-30 {
+.object-size {
+  max-width: 500px;
   min-width: 300px;
   width: 30%;
 }
 .img-wrap {
+  max-width: 500px;
   min-width: 300px;
   width: 30%;
   aspect-ratio: 1/1;

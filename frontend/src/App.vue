@@ -31,14 +31,14 @@ const leftDrawerOpen = ref(false)
             <q-item-label>Convert Image</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable rel="noopener" to="/how_to_use">
+        <!-- <q-item clickable rel="noopener" to="/how_to_use">
           <q-item-section avatar>
             <q-icon name="question_mark" />
           </q-item-section>
           <q-item-section>
             <q-item-label>How to use</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
         <q-item
           clickable
           target="_blank"
