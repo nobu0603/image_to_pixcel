@@ -164,12 +164,12 @@ const captureAndDownload = async () => {
 .object-size {
   max-width: 500px;
   min-width: 300px;
-  width: 30%;
+  width: 30% !important;
 }
 .img-wrap {
   max-width: 500px;
   min-width: 300px;
-  width: 30%;
+  width: 30% !important;
   aspect-ratio: 1/1;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
