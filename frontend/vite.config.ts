@@ -24,5 +24,11 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  root: '.', // プロジェクトのルートディレクトリを基点とする
+  build: {
+    rollupOptions: {
+      input: '/app/index.html' // 正しいパスに変更する必要があるかもしれません
+    }
   }
 })

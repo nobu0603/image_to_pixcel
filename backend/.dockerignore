@@ -1,0 +1,24 @@
+# Git directories
+.git/
+.gitignore
+
+# Python Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Poetry files
+poetry.lock
+pyproject.toml
+/.venv
+/pypoetry-cache
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db

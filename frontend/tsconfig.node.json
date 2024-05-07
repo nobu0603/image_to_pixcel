@@ -2,10 +2,10 @@
   "extends": "@tsconfig/node20/tsconfig.json",
   "include": [
     "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*"
+    "src/router/index.ts",
+    "src/views/HomeView.vue",
+    "src/App.vue",
+    "src/main.ts"
   ],
   "compilerOptions": {
     "composite": true,

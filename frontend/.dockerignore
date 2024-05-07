@@ -1,0 +1,18 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+
+# Build output
+dist/
+
+# Git directories
+.git/
+.gitignore
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.idea/
+.vscode/
