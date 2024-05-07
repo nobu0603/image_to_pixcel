@@ -8,7 +8,7 @@ WORKDIR /app
 COPY ./frontend/package*.json ./
 RUN npm install
 
-# アプリケーションのコードとindex.htmlをコピー
+# アプリケーションのコードをコピー
 COPY ./frontend/src /app/src
 COPY ./frontend/index.html /app
 COPY ./frontend/vite.config.ts /app
